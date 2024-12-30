@@ -1,16 +1,17 @@
+import 'package:ecommerce_ui/home.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SplashScreen extends StatelessWidget {
   final List<String> imageUrls = [
-    'assets/image7.jpg',
+    'assets/image5.jpg',
     'assets/image11.jpeg', // Replace with your image paths
     'assets/image9.jpeg',
-    'assets/6.jpeg',
     'assets/image8.png',
-    'assets/image10.jpeg',
     'assets/image11.jpeg', // Replace with your image paths
     'assets/image12.jpeg',
+    'assets/image10.jpeg',
+    'assets/image7.jpg',
   ];
 
   SplashScreen({super.key});
@@ -79,7 +80,9 @@ class SplashScreen extends StatelessWidget {
                       vertical: 18,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                  },
                   child: const Text(
                     'Get Started',
                     style: TextStyle(
