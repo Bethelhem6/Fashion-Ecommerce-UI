@@ -1,10 +1,21 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
-class ProductDetailPage extends StatelessWidget {
+class ProductDetailPage extends StatefulWidget {
   String image;
-  ProductDetailPage({super.key, required this.image});
+  String title;
+
+  ProductDetailPage({super.key, required this.image, required this.title});
+
+  @override
+  State<ProductDetailPage> createState() => _ProductDetailPageState();
+}
+
+class _ProductDetailPageState extends State<ProductDetailPage> {
+  bool isFavourite = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +31,7 @@ class ProductDetailPage extends StatelessWidget {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(12),
                     child: Image.asset(
-                      image,
+                      widget.image,
                       height: 500,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -29,7 +40,7 @@ class ProductDetailPage extends StatelessWidget {
                   Positioned(
                       top: 20,
                       left: 10,
-                      child: Container(
+                      child: SizedBox(
                         width: MediaQuery.of(context).size.width * .9,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,32 +75,42 @@ class ProductDetailPage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'dye lab',
+                  const Text(
+                    'dye \nlab',
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.blue,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  Icon(Icons.favorite_border, color: Colors.red),
+                  InkWell(
+                      onTap: () {
+                        isFavourite = !isFavourite;
+                        setState(() {});
+                      },
+                      child: Icon(
+                          isFavourite ? Icons.favorite : Icons.favorite_border,
+                          color: Colors.red)),
                 ],
-              ),
+              )
+                  .animate()
+                  .fadeIn(duration: 300.ms, delay: const Duration(seconds: 1))
+                  .slideX(begin: 0.2, end: 0),
               const SizedBox(height: 4),
-              const Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Pink Culottes',
-                    style: TextStyle(
+                    widget.title,
+                    style: const TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Text(
+                  const Text(
                     '\$200.11',
                     style: TextStyle(
                       fontSize: 20,
@@ -98,7 +119,10 @@ class ProductDetailPage extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
+              )
+                  .animate()
+                  .fadeIn(duration: 300.ms, delay: const Duration(seconds: 1))
+                  .slideX(begin: 0.2, end: 0),
               const SizedBox(height: 4),
               const Text(
                 'Eko Collection',
@@ -106,7 +130,10 @@ class ProductDetailPage extends StatelessWidget {
                   fontSize: 16,
                   color: Colors.grey,
                 ),
-              ),
+              )
+                  .animate()
+                  .fadeIn(duration: 300.ms, delay: const Duration(seconds: 1))
+                  .slideX(begin: 0.2, end: 0),
               const SizedBox(height: 16),
               const Row(
                 children: [
@@ -121,13 +148,19 @@ class ProductDetailPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16),
                   ),
                 ],
-              ),
+              )
+                  .animate()
+                  .fadeIn(duration: 300.ms, delay: const Duration(seconds: 1))
+                  .slideX(begin: 0.2, end: 0),
               const SizedBox(height: 16),
               Text(
                 'Elevate your style with this exquisite 2-piece African wear, featuring vibrant, bold prints and expertly tailored designs...',
                 style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-              ),
-              const SizedBox(height: 50),
+              )
+                  .animate()
+                  .fadeIn(duration: 300.ms, delay: const Duration(seconds: 1))
+                  .slideX(begin: 0.2, end: 0),
+              const SizedBox(height: 30),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
