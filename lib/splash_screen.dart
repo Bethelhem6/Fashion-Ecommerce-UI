@@ -144,7 +144,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       borderRadius: BorderRadius.circular(30),
                     ),
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 140,
+                      horizontal: 120,
                       vertical: 18,
                     ),
                   ),

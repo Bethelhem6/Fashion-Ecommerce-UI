@@ -29,10 +29,10 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
               Stack(
                 children: [
                   ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
+                    borderRadius: BorderRadius.circular(25),
                     child: Image.asset(
                       widget.image,
-                      height: 500,
+                      height: 400,
                       width: double.infinity,
                       fit: BoxFit.cover,
                     ),
@@ -168,7 +168,7 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 145,
+                    horizontal: 125,
                     vertical: 16,
                   ),
                 ),

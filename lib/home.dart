@@ -5,7 +5,6 @@ import 'package:floating_bottom_navigation_bar/floating_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -44,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     },
     {
       "image": "assets/image13.jpeg",
-      "title": "Elegant Dress",
+      "title": "Yellow Top",
       "price": "\$300.00",
       "category": "New Arrival"
     },
